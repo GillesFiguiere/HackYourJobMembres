@@ -95,9 +95,7 @@ new Vue({
   computed: {
     displayedMembers: function () {
       var filtered = this.filtered(this.members);
-      return filtered.sort(function (member1, member2) {
-        return member1.name.localeCompare(member2.name);
-      })
+      return filtered.sort(() => Math.random() - 0.5)
     }
   },
   methods: {
