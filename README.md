@@ -16,6 +16,6 @@ Pour ajouter ou modifier son profil :
 Liens :
 -------
 
-* **Site web des membres de Hack your job** : <https://hack-your-job.github.io/>
+* **Site web des membres de Hack your job** : <https://membres.hackyourjob.com/>
 * **Site web de Hack your job** : <http://www.hackyourjob.com/>
 
