@@ -1,5 +1,5 @@
 const fs = require("fs")
-const Ajv = require("Ajv")
+const Ajv = require("ajv")
 
 const profilesFolder = "job-hackers"
 const targetProfilesFile = "job-hackers.json"
