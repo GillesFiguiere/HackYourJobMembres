@@ -27,6 +27,8 @@
 
   <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
 
+  <script src="js/nav.js"></script>
+
   <script type="text/javascript">
     /*
         var _gaq = _gaq || [];
@@ -44,16 +46,16 @@
 
 <body>
   <div id="app-vue">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav id="header-nav" class="offset-lg-2 navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand text-light" href="#">
         <span class="logo"><img src="images/hackyourjob.png" alt="Logo Hack Your Job"></span>
       </a>
-      <button class="navbar-toggler" type="button" aria-controls="search-menu" aria-expanded="false"
+      <button class="navbar-toggler text-light" type="button" aria-controls="search-menu" aria-expanded="false"
         aria-label="Toggle navigation">
         <span class="fa fa-search"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <h1 class="navbar-nav text-light ml-auto mr-auto">
+        <h1 class="navbar-nav header-title ml-auto mr-auto">
           Les membres de Hack your job
         </h1>
       </div>
@@ -77,13 +79,13 @@
       </div>
     </div>
 
-    <div id="search-menu" class="row no-gutters" v-cloak>
-      <div class="col-lg-2 d-none d-lg-block cities-group">
-        <div class="list-group-item text-dark bg-light cities-title">
+    <div class="row no-gutters" v-cloak>
+      <div id="search-menu" class="col-lg-2 cities-group search-menu-hidden">
+        <div class="list-group-item text-dark bg-light search-title sticky-top text-center">
           {{ membersFilteredCount }} résultat{{ membersFilteredCount > 1 ? "s" : "" }}
         </div>
         <!-- Recherche complète -->
-        <div class="list-group-item text-dark bg-light cities-title">Recherche libre</div>
+        <div class="list-group-item text-dark bg-light search-title">Recherche libre</div>
         <form class="form-inline">
           <div class="input-group w-100">
             <input type="text" class="form-control" aria-label="Recherche libre" v-model="filtering">
@@ -93,8 +95,10 @@
           </div>
         </form>
         <!-- Liste des villes -->
-        <ul class="list-group cities-list">
-          <li class="list-group-item text-dark bg-light cities-title">Recherche par ville</li>
+        <div class="list-group-item text-dark bg-light search-title">
+          Recherche par ville
+        </div>
+        <ul class="list-group search-list">
           <li class="list-group-item justify-content-between list-group-item-action city-menu"
             :class="{ active: selectedCity === null }" @click="selectedCity = null">
             Toutes les villes <span class="badge badge-info badge-pill">{{ members.length }}</span>
@@ -106,8 +110,10 @@
           </li>
         </ul>
         <!-- Recherche par compétences -->
-        <ul class="list-group cities-list">
-          <li class="list-group-item text-dark bg-light cities-title">Recherche par compétence</li>
+        <div class="list-group-item text-dark bg-light search-title">
+          Recherche par compétence
+        </div>
+        <ul class="list-group search-list skills-search-list">
           <li class="list-group-item justify-content-between list-group-item-action city-menu"
             :class="{ active: selectedSkill === null }" @click="selectedSkill = null">
             Toutes les compétences <span class="badge badge-info badge-pill">{{ members.length }}</span>
@@ -121,7 +127,7 @@
         </ul>
 
       </div>
-      <div class="col-lg-10">
+      <div id="search-results" class="offset-lg-2 col-lg-10">
 
         <div class="row no-member-screen no-gutters" v-if="membersFilteredCount === 0">
           <div class="col-12 d-flex align-items-center justify-content-center text-center">
@@ -174,23 +180,21 @@
     </div>
 
     <!-- Footer -->
-    <nav class="navbar navbar-toggleable-md navbar-light bg-light">
+    <nav class="offset-lg-2 navbar navbar-light bg-light">
       <a class="navbar-brand" href="#">Hack your job</a>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.hackyourjob.com/" target="_blank"><i class="fab fa-github"></i>
-              Rejoignez la communauté Hack your job</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://twitter.com/HackYrJob" target="_blank"><i class="fab fa-twitter"></i>
-              @HackYrJob</a>
-          </li>
-        </ul>
-        <div class="ml-auto copyrights text-right">
-          <i class="fab fa-creative-commons"></i> Forké à partir de <a
-            href="https://github.com/brownbaglunch/BrownBagLunch">brown bag lunch</a>
-        </div>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.hackyourjob.com/" target="_blank"><i class="fab fa-github"></i>
+            Rejoignez la communauté Hack your job</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/HackYrJob" target="_blank"><i class="fab fa-twitter"></i>
+            @HackYrJob</a>
+        </li>
+      </ul>
+      <div class="ml-auto copyrights text-right">
+        <i class="fab fa-creative-commons"></i> Forké à partir de <a
+          href="https://github.com/brownbaglunch/BrownBagLunch">brown bag lunch</a>
       </div>
     </nav>
   </div>
