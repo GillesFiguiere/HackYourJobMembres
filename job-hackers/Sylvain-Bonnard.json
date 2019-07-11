@@ -27,10 +27,10 @@
     }    
   ],
   "skills": [
-    "JAVA",
+    "Java",
    "JAVA EE",
-   "VUE JS",
-   "Junit"
+   "Vue js",
+   "JUnit"
   ],
   "cities": ["Lyon"]
 }
