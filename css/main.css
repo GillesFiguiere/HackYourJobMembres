@@ -1,16 +1,9 @@
-.main-container {
-  /* padding-right: 0;
-  overflow-x: hidden; */
-}
-
-.cities-group {
-  /* padding-left: 0; */
+.full-text-search-append {
+  line-height: unset;
 }
 
 .cities-title.list-group-item:first-child {
   border-radius: 0;
-  background-color: #292B2C;
-  color: white;
 }
 
 .city-menu {
@@ -212,6 +205,8 @@
 }
 
 .logo {
+  display: inline-block;
+  margin-right: 2rem;
   height: 50px;
 }
 
@@ -236,4 +231,8 @@
 .active {
   background-color: var(--color-secondary)!important;
   border-color: var(--color-secondary)!important;
+}
+
+.badge-info {
+  background-color: var(--color-secondary);
 }
