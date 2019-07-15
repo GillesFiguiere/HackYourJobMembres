@@ -38,9 +38,25 @@ const getMembers = function () {
         vueData.cities.push({ name: city, members: cities[city] })
       }
 
+      vueData.cities.sort((city1, city2) => {
+        if(city1.members == city2.members) {
+          return city1.name.localeCompare(city2.name)
+        }
+
+        return city2.members - city1.members
+      })
+
       for (const skill in skills) {
         vueData.skills.push({ name: skill, members: skills[skill] })
       }
+
+      vueData.skills.sort((skill1, skill2) => {
+        if(skill1.members == skill2.members) {
+          return skill1.name.localeCompare(skill2.name)
+        }
+
+        return skill2.members - skill1.members
+      })
     })
   })
 }

@@ -1,26 +1,56 @@
-.main-container {
-  /* padding-right: 0;
-  overflow-x: hidden; */
+.full-text-search-append {
+  line-height: unset;
 }
-
-.cities-group {
-  /* padding-left: 0; */
+.header-title {
+  font-family: 'Caveat', cursive;
+  font-weight: 600;
+  color: var(--color-third);
 }
-
-.cities-title.list-group-item:first-child {
+.search-menu {
+  position: fixed;
+  z-index: 100;
+  overflow-y: auto;
+  height: calc(100vh - 76px);
+  transform: translateX(0%);
+  transition: transform 1s;
+}
+.search-menu-hidden {
+  transform: translateX(100%);
+}
+/* lg displays and up */
+@media (min-width: 992px) {
+  .search-menu-hidden {
+    transform: none;
+  }
+}
+.search-menu .list-group-item,
+.search-menu input {
   border-radius: 0;
-  background-color: #292B2C;
-  color: white;
 }
-
-.city-menu {
+.navbar-toggler {
+  font-size: 2rem;
+  border: none;
+}
+.search-list {
+  
+}
+.skills-search-list {
+  
+}
+#search-results {
+  min-height: calc(100vh - 76px - 96px)
+}
+.results-list {
   font-size: 80%;
   padding: 3px;
   cursor: pointer;
 }
-.city-menu.active .badge {
+.results-list.active .badge {
   background-color: white;
   color: var(--color-secondary);
+}
+.list-group-item {
+  border-radius: unset;
 }
 .no-member-screen {
   height: 100vh;
@@ -204,14 +234,17 @@
 /* Spinning logo, from https://codepen.io/arthurcamara1/pen/QgKjov */
 
 :root {
-  --color-bg: #292B2C;
+  --color-bg: #343f58;
   --color-primary: #EF5B7E;
   --color-secondary: #5bc0de;
+  --color-third: #b1dde8;
   --font-family: 'Fredoka One', sans-serif;
   --animation-speed: 10s;
 }
 
 .logo {
+  display: inline-block;
+  margin-right: 2rem;
   height: 50px;
 }
 
@@ -236,4 +269,20 @@
 .active {
   background-color: var(--color-secondary)!important;
   border-color: var(--color-secondary)!important;
+}
+
+.badge-info {
+  background-color: var(--color-secondary);
+}
+.bg-dark {
+  background-color: var(--color-bg)!important;
+}
+.bg-secondary {
+  background-color: var(--color-secondary)!important;
+}
+.text-secondary {
+  color: var(--color-secondary)!important;
+}
+.text-third {
+  color: var(--color-third)!important;
 }
