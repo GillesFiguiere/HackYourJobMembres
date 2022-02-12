@@ -7,6 +7,6 @@
         "test": ""
     },
     "devDependencies": {
-        "ajv": "^6.10.0"
+        "ajv": "^6.12.3"
     }
 }
